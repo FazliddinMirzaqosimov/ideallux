@@ -41,6 +41,7 @@ const articles = [
 const Home = () => {
     const {data: articleData,isLoading:articleLoading} = useQuery('get-article-home', () => apiService.getData('/articles?page=1&limit=3'))
     const {data: productData,isLoading:productLoading} = useQuery('get-product-home', () => apiService.getData('/products?page=1&limit=5&sort=created'))
+    const {data: productDataInfo,isLoading:productInfoLoading} = useQuery('get-product-info', () => apiService.getData('/products?page=1&limit=2'))
 
     const {lang}=useSelector(state => state.lang)
     const [language,setLanguage]=useState('')
@@ -86,9 +87,11 @@ const Home = () => {
             <div className={'bg-bgCard mb-16'}>
                 <div className={'grid xl:grid-cols-2 gap-3  sm:container sm:mx-auto'}>
                     {
-                        articles.map(article => (
-                            <ArticleHomeCard key={article.id} image={article.image} title={article.title}
-                                             text={article.text} id={article.id}/>
+                        productInfoLoading ? Array(2).fill('').map((_,ind)=> <Skeleton  height={400} key={ind}/>)
+                            :
+                        productDataInfo?.data?.products.map(product => (
+                            <ArticleHomeCard key={product?._id} image={product?.images[0]} title={language==='ru' ? product.titleRu : product.titleUz}
+                                             text={language==='ru' ? product.descriptionRu : product.descriptionUz} id={product?._id}/>
 
                         ))
                     }

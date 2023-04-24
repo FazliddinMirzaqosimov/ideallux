@@ -15,4 +15,5 @@ export {default as Information} from './Information/information'
 export {default as ArticleDescription} from './Article-description/Article-description'
 export {default as ProductImageSlider} from './Product-image-slider/Product-image-slider'
 export {default as ContactInfo} from './Contact-info/contact-info'
+export {default as Loading} from './Loading/loading'
 
