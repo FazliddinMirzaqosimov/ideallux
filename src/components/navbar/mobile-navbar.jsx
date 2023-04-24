@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {bottomSidebar, sidebarNavItems, } from "@/config/routeConfigs";
 import Link from "next/link";
 import {RiCloseCircleLine, RiInstagramLine, RiMenuLine, RiPhoneLine, RiSearchLine} from "react-icons/ri";
@@ -13,9 +13,12 @@ const MobileNavbar = () => {
     const [show, setShow] = useState(false)
     const [logoState,setLogo]=useState(Logo)
 
+    useEffect(()=>{
+        setLogo(show ? LogoWhite : Logo)
+
+    },[show])
     const handleShowSidebar = () => {
         setShow(prewState=>!prewState)
-        setLogo(!show ? LogoWhite : Logo)
     }
     return (
         <>
@@ -43,7 +46,7 @@ const MobileNavbar = () => {
 
             <div
                 className={`bg-white  h-full px-3 py-4 flex flex-col items-start fixed top-16 ${show ? 'left-0' : '-left-full'}  space-y-6 w-full duration-500 z-[999]`}>
-                <SearchInput/>
+                <SearchInput setShow={setShow} isState={true}/>
                 <ul className={'space-y-3'}>
                     {
                         sidebarNavItems.map(nav => (

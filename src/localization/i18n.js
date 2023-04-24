@@ -70,7 +70,8 @@ i18next
                     pageNotFound:{
                         title:'Упсс... Страница не доступна',
                         info:'Информация о компании не предоставленна'
-                    }
+                    },
+                    nothingFound:"Ничего не найдено"
                 }
             },
             uz:{
@@ -131,7 +132,8 @@ i18next
                     pageNotFound:{
                         title:'Voy... Sahifa mavjud emas',
                         info:'Kompaniya haqida ma\'lumot berilmagan'
-                    }
+                    },
+                    nothingFound:'Hech narsa topilmadi'
                 }
             }}
     })

@@ -16,7 +16,6 @@ const Languages = ({color}) => {
     const changeLang=(e)=>{
 
         const lang=e.target.value
-        console.log(lang)
         dispatch(changeLanguages(lang))
         i18n.changeLanguage(lang)
         localStorage.setItem('lang',lang)

@@ -114,7 +114,7 @@ const Product = () => {
                         productLoading ?  Array(4).fill('').map((_,ind)=> <Skeleton  height={350} key={ind}/>)
                         :
                         data?.length === 0 ? <div className={'col-span-4 h-[300px] font-roboto text-black text-lg flex items-center justify-center w-full'}>
-                                hech narsa topilmadi
+                            {t('nothingFound')}
                             </div>
                             :
                             data?.map(product => (

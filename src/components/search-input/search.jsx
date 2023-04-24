@@ -5,7 +5,7 @@ import {useDispatch} from "react-redux";
 import {useRouter} from "next/router";
 import {searchData} from "@/slice/search";
 
-const Search = () => {
+const Search = ({isState,setShow}) => {
     const {t} = useTranslation()
     const [search, setSearch] = useState('')
     const dispatch = useDispatch()
@@ -13,12 +13,17 @@ const Search = () => {
     const searchHandle = () => {
         if (search !== "") {
             dispatch(searchData(search))
+            setSearch("")
             router.push('/category/all')
+            if (isState){
+                setShow(false)
+            }
         }
     }
     return (
         <div className={'flex items-center w-full md:bg-white bg-bgCard md:border-primary border rounded'}>
             <input type="text" placeholder={t('searchPlaceholder')}
+                   value={search}
                    onChange={(e) => setSearch(e.target.value)}
                    className={'w-full px-6 py-[11px] bg-transparent  outline-none'}/>
             <button onClick={searchHandle}
