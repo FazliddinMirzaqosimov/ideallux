@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import {ArticleCard, ArticleDescription, TitleSection} from "@/components";
-import ArticleImage from "/public/articel-card.png";
 import Image from "next/image";
 import {TbClockHour6} from "react-icons/tb";
 import {useQuery} from "react-query";

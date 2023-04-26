@@ -1,6 +1,5 @@
 import Image from "next/image";
-import ProductImage from '/public/product.png'
-import ProductImage2 from '/public/vitechka.png'
+
 import {ProductCard, ProductImageSlider, TitleSection} from "@/components";
 import React, {useEffect, useState} from "react";
 import {useRouter} from "next/router";

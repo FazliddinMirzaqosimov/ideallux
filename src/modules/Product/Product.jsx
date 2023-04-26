@@ -1,6 +1,5 @@
 import {Button, CategoryCard, ProductCard, TitleSection} from "@/components";
 import style from './product.module.scss'
-import ProductImage from "../../../public/product.png";
 import React, {useEffect, useState} from "react";
 import {useTranslation} from "react-i18next";
 import {useQuery} from "react-query";

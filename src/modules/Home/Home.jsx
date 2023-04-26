@@ -13,29 +13,13 @@ import {
     Information
 } from "@/components";
 import ImageArticle from '/public/footer-image.png'
-import Vitechka from "/public/vitechka.png";
 import apiService from "@/service/api";
 import {useQuery} from "react-query";
 import Skeleton from "react-loading-skeleton";
 import React, {useEffect, useState} from "react";
 import {useSelector} from "react-redux";
-
 SwiperCore.use([Autoplay]);
 
-const articles = [
-    {
-        image: ImageArticle,
-        text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-        title: 'IDEAL LUX-5753',
-        id: 'sfjdfksbjh'
-    },
-    {
-        image: Vitechka,
-        text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-        title: 'IDEAL LUX-5753',
-        id: 'sfjdfsdffksbjh'
-    }
-]
 
 
 const Home = () => {

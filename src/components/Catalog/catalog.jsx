@@ -23,12 +23,12 @@ const Catalog = ({setIsShow, isState}) => {
         }
     }
     return (
-        <div className={'grid xl:grid-cols-6 lg:grid-cols-4 grid-cols-3  gap-2'}>
+        <div className={'grid  xl:grid-cols-6 lg:grid-cols-4 grid-cols-3  grid-rows-2  gap-2'}>
             {
                 isLoading ? Array(6).fill('').map((_,ind)=> <Skeleton  height={400} key={ind}/>)
                     :
                 data?.data?.categories.map(category => (
-                    <div key={category?._id} onClick={() => categoryClick(category._id)}>
+                    <div key={category?._id} onClick={() => categoryClick(category._id)} className={`${category?.nameRu=== 'Мини печи' || category?.nameRu=== 'Настольная газовая плита' ? 'row-span-1' : 'row-span-2'}`}>
                         <CategoryCard isCard={true} image={category?.image} id={category?._id} text={language==='ru' ? category?.nameRu : category?.nameUz}
                                       id={category?._id}/>
                     </div>

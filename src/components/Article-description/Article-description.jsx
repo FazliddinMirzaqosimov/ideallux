@@ -1,6 +1,5 @@
 import React from 'react';
 import Image from "next/image";
-import ArticleImage from "../../../public/articel-card.png";
 
 const ArticleDescription = ({image,description}) => {
     return (

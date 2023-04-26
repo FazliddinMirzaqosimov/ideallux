@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import {ArticleCard, TitleSection} from "@/components";
-import ArticleImage from "../../../public/articel-card.png";
 import {useQuery} from "react-query";
 import apiService from "@/service/api";
 import Skeleton from "react-loading-skeleton";
