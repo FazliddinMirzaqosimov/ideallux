@@ -8,6 +8,7 @@ const ArticleById = () => {
             <Head>
                 <title>Ideallux</title>
                 <meta name="description" content="Ideallux maqolalari" />
+                <link rel="icon" href="/logo-icon.png" />
             </Head>
             <ArticleDetailed />
         </div>
