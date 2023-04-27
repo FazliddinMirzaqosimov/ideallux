@@ -12,11 +12,11 @@ const ProductImageSlider = ({images}) => {
                 loop={'true'}
                 pagination={true}
                 modules={[Pagination]}
-                className="  mySwiper2 w-full aspect-[5/4] z-20">
+                className="  mySwiper2 w-full aspect-[4/4] z-20">
                 {
                     images?.map(image => (
                         <SwiperSlide key={image?._id} className={'relative w-full h-full'}>
-                            <Image src={`${process.env.NEXT_PUBLIC_API_URL}/img/${image.name}`} alt={'product-image'}
+                            <Image src={image?.location} alt={'product-image'}
                                    layout='fill'/>
                         </SwiperSlide>
                     ))

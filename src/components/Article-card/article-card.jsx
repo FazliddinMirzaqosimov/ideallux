@@ -10,7 +10,7 @@ const ArticleCard = ({image, title,id,created}) => {
     return (
         <div className={'product-card bg-white  rounded-xl shadow-xl flex flex-col justify-between space-y-3'}>
                 <div className={'w-full h-48 sm:h-[360px] relative'}>
-                    <Image src={`${process.env.NEXT_PUBLIC_API_URL}/img/${image.name}`} alt={'product-image'} layout='fill'/>
+                    <Image src={image.location} alt={'product-image'} layout='fill'/>
                 </div>
 
 

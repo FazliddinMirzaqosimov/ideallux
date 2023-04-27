@@ -34,14 +34,14 @@ const ProductDetailed = () => {
     useEffect(() => {
         setLanguage(lang)
     }, [lang])
-
+    console.log(mainImage)
     const checkkImage = (image) => {
-        setMainImage(image?.name)
+        setMainImage(image?.location)
     }
 
     useEffect(() => {
-        setMainImage(productById?.data?.product?.images[0].name)
-        console.log(productById?.data?.product?.category)
+        setMainImage(productById?.data?.product?.images[0].location)
+        console.log(productById?.data?.product)
         if (isSuccess) {
             refetch()
         }
@@ -68,8 +68,8 @@ const ProductDetailed = () => {
                                         {
                                             productById?.data?.product?.images.map(image => (
                                                 <div onClick={() => checkkImage(image)} key={image?._id}
-                                                     className={' xl:w-32 w-24 aspect-[5/5] flex items-center justify-center border relative rounded-xl'}>
-                                                    <Image src={`${process.env.NEXT_PUBLIC_API_URL}/img/${image?.name}`}
+                                                     className={' xl:w-32 w-24 aspect-[4/5] flex items-center justify-center border relative rounded-xl'}>
+                                                    <Image src={image?.location}
                                                            alt={'detailed product image'} layout={'fill'}/>
                                                 </div>
 
@@ -77,9 +77,9 @@ const ProductDetailed = () => {
                                         }
 
                                     </div>
-                                    <div className={'relative  lg:aspect-[4/5] aspect-[4/5] w-full'}>
-                                        <Image src={`${process.env.NEXT_PUBLIC_API_URL}/img/${mainImage}`}
-                                               alt={'detailed product image'} fill className={'object-cover'}/>
+                                    <div className={'relative  lg:aspect-[3/5] aspect-[4/5] w-full'}>
+                                        <Image src={mainImage}
+                                               alt={'detailed product image'} fill className={''}/>
                                     </div>
                                 </div>
                                 <div className={'sm:hidden block w-full'}>

@@ -8,7 +8,7 @@ const ArticleDescription = ({image,description}) => {
             </div>
             <div
                     className={'relative 2xl:w-[700px] sm:h-[350px] xs:h-60 h-40     xl:w-[500px] lg:w-[350px] w-full lg:order-2 order-1  flex-shrink-0'}>
-                <Image src={`${process.env.NEXT_PUBLIC_API_URL}/img/${image?.name}`} alt={'description image'} layout={'fill'}/>
+                <Image src={image?.location} alt={'description image'} layout={'fill'}/>
             </div>
         </div>
     );

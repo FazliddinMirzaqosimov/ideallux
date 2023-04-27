@@ -41,7 +41,7 @@ const ArticleDetailed = () => {
                             articleByIdLoading ? <Skeleton height={330}/>
                                 :
                                 <Image
-                                    src={`${process.env.NEXT_PUBLIC_API_URL}/img/${articleById?.data?.article?.mainImage?.name}`}
+                                    src={articleById?.data?.article?.mainImage?.location}
                                     alt={'article-detailed'} layout={'fill'}/>
                         }
                     </div>
