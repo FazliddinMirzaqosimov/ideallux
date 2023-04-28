@@ -25,7 +25,7 @@ const ArticleHomeCard = ({title, text, id, image}) => {
             <div className={'relative sm:w-1/2    xs:w-[350px] w-48  sm:h-full xs:h-[350px] h-48 overflow-hidden sm:order-2 order-1  '}>
                 <div className={'sm:block hidden absolute top-1/3 left-0  w-[455px] h-[455px] rounded-full bg-primary z-20'}></div>
                 <div className={'sm:absolute sm:bottom-0 w-full h-full  z-40'}>
-                    <Image src={image?.location} alt={'image'} layout={'fill'} />
+                    <Image src={image?.location} alt={'image'} layout={'fill'} className={'object-contain'}/>
                 </div>
             </div>
         </div>
