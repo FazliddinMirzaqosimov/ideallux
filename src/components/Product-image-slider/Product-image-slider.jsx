@@ -17,7 +17,7 @@ const ProductImageSlider = ({images}) => {
                     images?.map(image => (
                         <SwiperSlide key={image?._id} className={'relative w-full h-full'}>
                             <Image src={image?.location} alt={'product-image'}
-                                   layout='fill'/>
+                                   layout='fill' className={'object-contain'}/>
                         </SwiperSlide>
                     ))
                 }

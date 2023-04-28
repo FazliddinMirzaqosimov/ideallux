@@ -70,7 +70,7 @@ const ProductDetailed = () => {
                                                 <div onClick={() => checkkImage(image)} key={image?._id}
                                                      className={' xl:w-32 w-24 aspect-[4/5] flex items-center justify-center border relative rounded-xl'}>
                                                     <Image src={image?.location}
-                                                           alt={'detailed product image'} layout={'fill'}/>
+                                                           alt={'detailed product image'} layout={'fill'} className={'object-contain'}/>
                                                 </div>
 
                                             ))
@@ -79,7 +79,7 @@ const ProductDetailed = () => {
                                     </div>
                                     <div className={'relative  lg:aspect-[3/5] aspect-[4/5] w-full'}>
                                         <Image src={mainImage}
-                                               alt={'detailed product image'} fill className={''}/>
+                                               alt={'detailed product image'} fill className={''} className={'object-contain'}/>
                                     </div>
                                 </div>
                                 <div className={'sm:hidden block w-full'}>

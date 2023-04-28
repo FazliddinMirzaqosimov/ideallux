@@ -24,7 +24,7 @@ SwiperCore.use([Autoplay]);
 
 const Home = () => {
     const {data: articleData,isLoading:articleLoading} = useQuery('get-article-home', () => apiService.getData('/articles?page=1&limit=3'))
-    const {data: productData,isLoading:productLoading} = useQuery('get-product-home', () => apiService.getData('/products?page=1&limit=5&sort=created'))
+    const {data: productData,isLoading:productLoading} = useQuery('get-product-home', () => apiService.getData('/products?&limit=5&sort=-created'))
     const {data: productDataInfo,isLoading:productInfoLoading} = useQuery('get-product-info', () => apiService.getData('/products?page=1&limit=2'))
 
     const {lang}=useSelector(state => state.lang)

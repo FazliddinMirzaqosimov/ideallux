@@ -64,7 +64,7 @@ const Product = () => {
                         </div>
                         {
                             categorydata?.data?.categories.map(category => (
-                                <div key={category?._id} onClick={() => changeCategory(category?._id)}>
+                                <div key={category?._id} onClick={() => changeCategory(category?._id)} className={'flex-shrink-0'}>
                                     <CategoryCard isCard={false} text={language==='ru' ? category?.nameRu : category?.nameUz}
                                                   isActive={categoryIdState === category?._id}/>
 
