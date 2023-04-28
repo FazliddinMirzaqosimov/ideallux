@@ -7,7 +7,7 @@ import {useTranslation} from "react-i18next";
 const ArticleHomeCard = ({title, text, id, image}) => {
     const {t} =useTranslation()
     return (
-        <div className={'flex sm:px-3 sm:flex-row flex-col items-center  justify-between md:h-[480px] sm:h-[350px] gap-10'}>
+        <div className={'flex sm:px-3 sm:flex-row flex-col items-center  justify-between md:h-[480px] sm:h-[350px] sm:gap-10'}>
             <div
                 className={'flex sm:w-1/2 w-full flex-col items-start justify-center  sm:order-1 order-2 sm:bg-transparent bg-primary  sm:p-0 p-3 sm:h-full '}>
                 <h1 className={'font-bold xl:text-5xl lg:text-4xl sm:text-3xl text-2xl mb-1 sm:text-black text-white font-roboto break-all'}>{title}</h1>
