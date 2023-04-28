@@ -20,10 +20,11 @@ const ProductDetailed = () => {
         data: productData,
         isLoading: productLoading,
         refetch
-    } = useQuery('get-product-rec', ({url}) => apiService.getData(`/products?page=1&limit=5&category=${productById?.data?.product?.category}`), {
+    } = useQuery('get-product-rec', ({url}) => apiService.getData(`/products?page=1&limit=5&category=${productById?.data?.product?.category._id}`), {
         enabled: false
     })
 
+    console.log(productById?.data?.product?.category)
 
     const {t} = useTranslation()
 

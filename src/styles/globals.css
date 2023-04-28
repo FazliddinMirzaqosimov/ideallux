@@ -11,3 +11,11 @@
     font-family: 'Roboto';
     src: url("../../public/fonts/Roboto-Regular.ttf");
 }
+
+.four-line-dots {
+    overflow: hidden;
+    width: 100%;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
