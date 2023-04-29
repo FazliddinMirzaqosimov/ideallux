@@ -36,7 +36,7 @@ const ArticleDetailed = () => {
 
                 <div className={'sm:bg-white'}>
                     {/*title    */}
-                    <div className={'relative w-full lg:h-[330px] xs:h-52 h-28 '}>
+                    <div className={'relative w-full lg:aspect-[5/2] aspect-[2/1] '}>
                         {
                             articleByIdLoading ? <Skeleton height={330}/>
                                 :

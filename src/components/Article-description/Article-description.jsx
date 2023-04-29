@@ -7,7 +7,7 @@ const ArticleDescription = ({image,description}) => {
             <div className={'lg:w-1/2'} dangerouslySetInnerHTML={{__html: description}}>
             </div>
             <div
-                    className={'relative 2xl:w-[700px] sm:h-[350px] xs:h-60 h-40     xl:w-[500px] lg:w-[350px] w-full lg:order-2 order-1  flex-shrink-0'}>
+                    className={'relative   2xl:aspect-[4/3] lg:aspect-square aspect-[4/3] lg:w-1/2 w-full lg:order-2 order-1  flex-shrink-0'}>
                 <Image src={image?.location} alt={'description image'} layout={'fill'}/>
             </div>
         </div>
