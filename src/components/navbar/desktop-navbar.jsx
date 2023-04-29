@@ -32,7 +32,7 @@ const DesktopNavbar = () => {
 
                     </ul>
                     <div className={'flex items-center space-x-6'}>
-                        <a target="_blank" href={'https://www.instagram.com/'}
+                        <a target="_blank" href={'https://www.instagram.com/ideallux_uz/'}
                            className={'flex items-center space-x-1'}>
                             <RiInstagramLine className={'text-white'}/>
                             <p className={'text-xs text-white font-GothamPro'}>Instagram</p>

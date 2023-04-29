@@ -70,9 +70,9 @@ const Product = () => {
         let sortByAlfa = []
         if (!isSort) {
             if (lang === 'ru') {
-                sortByAlfa = productData?.data?.products.sort((a, b) => a.titleRu.localeCompare(b.titleRu))
+                sortByAlfa = data.sort((a, b) => a.titleRu.localeCompare(b.titleRu))
             } else {
-                sortByAlfa = productData?.data?.products.sort((a, b) => a.titleUz.localeCompare(b.titleUz))
+                sortByAlfa = data.sort((a, b) => a.titleUz.localeCompare(b.titleUz))
             }
             setData(sortByAlfa)
             setIsSort(true)
