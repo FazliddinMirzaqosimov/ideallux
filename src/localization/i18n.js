@@ -71,7 +71,8 @@ i18next
                         title:'Упсс... Страница не доступна',
                         info:'Информация о компании не предоставленна'
                     },
-                    nothingFound:"Ничего не найдено"
+                    nothingFound:"Ничего не найдено",
+                    aboutCompany:"Один из ведущих производителей на рынке бытовой техники.История IDEAL началась в 2013 году. И уже сегодня, в компании горит дело одной из лучших команд экспертов своего дела, состоящая более чем из 1000 человек. Каждый из них обладает безупречным вкусом и творческим мышлением, поэтому продукция IDEAL не только очень функциональная и надежна, но и впишется в любой современный интерьер. Также компания IDEAL ведет тесное сотрудничество с такими компаниями, как 'SIMFER' и 'ODUL trophy'"
                 }
             },
             uz:{
@@ -133,7 +134,16 @@ i18next
                         title:'Voy... Sahifa mavjud emas',
                         info:'Kompaniya haqida ma\'lumot berilmagan'
                     },
-                    nothingFound:'Hech narsa topilmadi'
+                    nothingFound:'Hech narsa topilmadi',
+                    aboutCompany:"Uy xo'jaligi texnikasining yetakchi ishlab\n" +
+                        "chiqaruvchilardan biri. IDEAL 2013-yilda tashkil topgan.\n" +
+                        "Bugungi kunda kompaniya jadallik bilan rivojlanib bormoqda.\n" +
+                        "1000 kishidan ortiq o‘z sohasi bo‘yicha mutaxasislardan\n" +
+                        "iborat jamoa.Har bir xodimimiz o'z kasbining ustasi,\n" +
+                        "shuning uchun.IDEAL mahsulotlari juda funktsional va\n" +
+                        "ishonchli, Ayni paytda har qanday zamon talablariga mos\n" +
+                        "keladi. IDEAL kompaniyasi \"SIMFER\" va \"ODUL trophy\"\n" +
+                        "kompaniyalar bilan yaqindan hamkorlik qiladi."
                 }
             }}
     })

@@ -40,8 +40,8 @@ const Product = () => {
     console.log(data)
 
     useEffect(() => {
-        setCategoryIdState(categoryId)
         console.log('render')
+        setCategoryIdState(categoryId)
         if (categoryId === 'all' && search === "") {
 
             const shuffleData = shuffle(productData?.data?.products)
@@ -67,8 +67,8 @@ const Product = () => {
 
 
     const productSort = () => {
-        let sortByAlfa = []
         if (!isSort) {
+        let sortByAlfa = []
             if (lang === 'ru') {
                 sortByAlfa = data.sort((a, b) => a.titleRu.localeCompare(b.titleRu))
             } else {
@@ -77,13 +77,11 @@ const Product = () => {
             setData(sortByAlfa)
             setIsSort(true)
         } else {
-            const shuffleData = shuffle(productData?.data?.products)
+            console.log(data)
+            const shuffleData = shuffle(data)
             setData(shuffleData)
             setIsSort(false)
-
         }
-
-        console.log(sortByAlfa)
     }
 
     function shuffle(array) {

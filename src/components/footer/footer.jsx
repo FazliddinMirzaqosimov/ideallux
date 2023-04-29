@@ -17,9 +17,7 @@ const Footer = () => {
                         <Image src={Logo} alt={'logo'} width={174} height={64}/>
                     </Link>
                     <p className={'font-normal text-sm text-secondary font-GothamPro'}>
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                        mollit anim id est laborum.
+                        {t('aboutCompany')}
                     </p>
                     <SocialMedia isContact={false}/>
                 </div>
