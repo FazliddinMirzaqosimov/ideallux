@@ -88,13 +88,13 @@ const ProductDetailed = () => {
                                 </div>
                                 <div className={'lg:w-1/2 w-full '}>
                                     <div className={'flex flex-col items-start space-y-3  w-full'}>
-                                        <h6 className={'font-normal text-black text-2xl font-roboto'}>Коротко о
+                                        <h6 className={'font-normal text-black text-2xl font-GothamPro'}>Коротко о
                                             товаре</h6>
                                         {
                                             language === 'ru' ?
                                                 productById?.data?.product?.aboutRu.map(about => (
                                                     <div key={about?._id}
-                                                         className={'font-roboto grid grid-cols-2  w-full gap-10'}>
+                                                         className={'font-GothamPro grid grid-cols-2  w-full gap-10'}>
                                                         <p className={'text-secondary break-words '}>{about?.variable}</p>
                                                         <span className={'break-words '}>{about?.value}</span>
                                                     </div>
@@ -103,7 +103,7 @@ const ProductDetailed = () => {
                                                 :
                                                 productById?.data?.product?.aboutUz.map(about => (
                                                     <div key={about?._id}
-                                                         className={'font-roboto grid grid-cols-2  w-full gap-10'}>
+                                                         className={'font-GothamPro grid grid-cols-2  w-full gap-10'}>
                                                         <p className={'text-secondary break-words '}>{about?.variable}</p>
                                                         <span className={'break-words '}>{about?.value}</span>
                                                     </div>
@@ -120,7 +120,7 @@ const ProductDetailed = () => {
 
                                         </div>
                                         <p onClick={showDescription}
-                                           className={'font-roboto text-primary text-base underline'}>{t('more')}</p>
+                                           className={'font-GothamPro text-primary text-base underline'}>{t('more')}</p>
                                     </div>
                                 </div>
                             </div>

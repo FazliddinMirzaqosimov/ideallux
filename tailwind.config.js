@@ -40,8 +40,8 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        'roboto':['Roboto'],
-        'domCasual':['DomCasual']
+        'GothamPro':['GothamPro'],
+        'domCasual':['GothamPro']
       },
       colors:{
         primary:"#EE3036",

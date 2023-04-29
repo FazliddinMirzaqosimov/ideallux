@@ -51,14 +51,14 @@ const ArticleDetailed = () => {
                                 :
                                 <div className={'flex items-start justify-between'}>
                                     <div className={'space-y-3'}>
-                                        <h5 className={'font-bold lg:text-4xl sm:text-2xl text-lg text-primary font-roboto'}>
+                                        <h5 className={'font-bold lg:text-4xl sm:text-2xl text-lg text-primary font-GothamPro'}>
                                             {language === 'ru' ? articleById?.data?.article?.titleRu : articleById?.data?.article?.titleUz}
                                         </h5>
                                     </div>
                                     <div
                                         className={'sm:flex items-center space-x-2 text-secondary flex-shrink-0 hidden'}>
                                         <TbClockHour6/>
-                                        <p className={'font-roboto'}>
+                                        <p className={'font-GothamPro'}>
                                             {moment(articleById?.data?.article?.created).fromNow()}
                                         </p>
                                     </div>

@@ -15,15 +15,15 @@ const ArticleCard = ({image, title,id,created}) => {
 
 
             <div className={'sm:p-6 p-3'}>
-                <p className={' lg:text-2xl text-lg font-bold font-roboto'}>{title}</p>
+                <p className={' lg:text-2xl text-lg font-bold font-GothamPro'}>{title}</p>
             <div className={'flex items-center justify-between '}>
-                <Link href={`/article/${id}`} className={'font-normal  text-primary  text-base flex items-center space-x-3 font-roboto'}>
+                <Link href={`/article/${id}`} className={'font-normal  text-primary  text-base flex items-center space-x-3 font-GothamPro'}>
                     Подробнее
                     <FaLongArrowAltRight fontSize={20}/>
                 </Link>
                 <div className={'flex items-center space-x-2 text-secondary'}>
                     <TbClockHour6/>
-            <p className={'font-roboto'}>
+            <p className={'font-GothamPro'}>
                 {moment(created).fromNow()}
             </p>
                 </div>

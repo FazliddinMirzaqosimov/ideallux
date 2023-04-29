@@ -4,52 +4,68 @@ import React, {useEffect, useState} from "react";
 import {useTranslation} from "react-i18next";
 import {useQuery} from "react-query";
 import apiService from "@/service/api";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {useRouter} from "next/router";
 import Skeleton from "react-loading-skeleton";
+import {searchData} from "@/slice/search";
 
 const Product = () => {
-    const {lang}=useSelector(state => state.lang)
+    const {lang} = useSelector(state => state.lang)
     const [data, setData] = useState([])
     const [categoryIdState, setCategoryIdState] = useState('')
-    const [language,setLanguage]=useState('')
-    const {search}=useSelector(state => state.search)
+    const [language, setLanguage] = useState('')
+    const {search} = useSelector(state => state.search)
     const {t} = useTranslation()
+    const dispatch = useDispatch()
 
-
-    const {data: productData,isLoading:productLoading} = useQuery('get-products-all', () => apiService.getData('/products'))
+    const {
+        data: productData,
+        isLoading: productLoading
+    } = useQuery('get-products-all', () => apiService.getData('/products'))
     const {data: categorydata} = useQuery('get-category', () => apiService.getData('/categories'))
     const router = useRouter()
     const {categoryId} = router.query
 
-    console.log(search)
 
     useEffect(() => {
         setCategoryIdState(categoryId)
-        if (categoryId === 'all') {
-            setData(productData?.data?.products)
+        if (categoryId === 'all' && search === "") {
+
+          const shuffleData=  shuffle(productData?.data?.products)
+            console.log(shuffleData)
+            setData(shuffleData)
+        } else if (categoryId === 'all' && search !== "") {
+            const searchData = productData?.data?.products.filter(product => product.titleRu.toLowerCase().includes(search) || product.titleUz.toLowerCase().includes(search))
+            setData(searchData)
         } else {
             const filterById = productData?.data?.products?.filter(product => product?.category?._id === categoryId)
             setData(filterById)
         }
 
-    }, [categoryId, productData])
+    }, [categoryId, productData, search])
 
-    useEffect(()=>{
+    useEffect(() => {
         setLanguage(lang)
-    },[lang])
+    }, [lang])
     const changeCategory = (id) => {
         router.push(`/category/${id}`)
         setCategoryIdState(id)
+        dispatch(searchData(""))
     }
 
-    useEffect(()=>{
-        console.log('render')
+    const productSort = () => {
+        console.log(productData?.data?.products)
+        setData([])
+    }
 
-        const searchData=data.filter(product=>product.titleRu.toLowerCase().includes(search) || product.titleUz.toLowerCase().includes(search))
-        setData(searchData)
-        console.log(searchData)
-    },[search])
+    function shuffle(array) {
+        for (let i = array?.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
     return (
         <div className={'bg-bgColor sm:py-16 py-12 min-h-[90vh]'}>
             <div className={'container mx-auto'}>
@@ -64,8 +80,10 @@ const Product = () => {
                         </div>
                         {
                             categorydata?.data?.categories.map(category => (
-                                <div key={category?._id} onClick={() => changeCategory(category?._id)} className={'flex-shrink-0'}>
-                                    <CategoryCard isCard={false} text={language==='ru' ? category?.nameRu : category?.nameUz}
+                                <div key={category?._id} onClick={() => changeCategory(category?._id)}
+                                     className={'flex-shrink-0'}>
+                                    <CategoryCard isCard={false}
+                                                  text={language === 'ru' ? category?.nameRu : category?.nameUz}
                                                   isActive={categoryIdState === category?._id}/>
 
                                 </div>
@@ -75,7 +93,7 @@ const Product = () => {
                     </div>
                     {/*filter*/}
                     <div className={'flex items-center sm:space-x-6 space-x-3 lg:order-2 order-1 lg:mb-0 mb-3'}>
-                        <Button text={t('sort')} bg={'transparent'} color={'black'}
+                        <Button handleClick={productSort} text={t('sort')} bg={'transparent'} color={'black'}
                                 icon={<svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                            xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -110,16 +128,17 @@ const Product = () => {
                 <div
                     className={'grid 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8 mt-12'}>
                     {
-                        productLoading ?  Array(4).fill('').map((_,ind)=> <Skeleton  height={350} key={ind}/>)
-                        :
-                        data?.length === 0 ? <div className={'col-span-4 h-[300px] font-roboto text-black text-lg flex items-center justify-center w-full'}>
-                            {t('nothingFound')}
-                            </div>
+                        productLoading ? Array(5).fill('').map((_, ind) => <Skeleton height={350} key={ind}/>)
                             :
-                            data?.map(product => (
-                                <ProductCard key={product._id} id={product._id} images={product?.images}
-                                             title={language==='ru' ? product?.titleRu : product?.titleUz}/>
-                            ))
+                            data?.length === 0 ? <div
+                                    className={'col-span-4 h-[300px] font-GothamPro text-black text-lg flex items-center justify-center w-full'}>
+                                    {t('nothingFound')}
+                                </div>
+                                :
+                                data?.map(product => (
+                                    <ProductCard key={product._id} id={product._id} images={product?.images}
+                                                 title={language === 'ru' ? product?.titleRu : product?.titleUz}/>
+                                ))
                     }
                 </div>
             </div>

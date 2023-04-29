@@ -19,7 +19,7 @@ const ProductCard = ({images, title,id,isNew}) => {
             }
             <div className={'space-y-3'}>
                 <ProductImageSlider images={images}/>
-                <p className={'break-all font-normal text-base font-roboto'}>{title}</p>
+                <p className={'break-all font-normal text-base font-GothamPro'}>{title}</p>
 
             </div>
             <Button text={t('see')} handleClick={productDetailed} icon={<RiEyeLine className={'text-white text-xl'}/>} bg={'primary'} color={'white'}/>

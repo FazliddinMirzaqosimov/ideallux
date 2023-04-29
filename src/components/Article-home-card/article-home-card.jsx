@@ -10,14 +10,14 @@ const ArticleHomeCard = ({title, text, id, image}) => {
         <div className={'flex sm:px-3 sm:flex-row flex-col items-center  justify-between sm:h-[480px]  sm:gap-10'}>
             <div
                 className={'flex sm:w-1/2 w-full flex-col items-start justify-center  sm:order-1 order-2 sm:bg-transparent bg-primary  sm:p-0 p-3 sm:h-full '}>
-                <h1 className={'font-bold xl:text-5xl lg:text-4xl sm:text-3xl text-2xl mb-1 sm:text-black text-white font-roboto break-all'}>{title}</h1>
+                <h1 className={'font-bold xl:text-5xl lg:text-4xl sm:text-3xl text-2xl mb-1 sm:text-black text-white font-GothamPro break-all'}>{title}</h1>
                 <div className={' break-all'}>
                         <div className={'four-line-dots sm:text-black text-white sm:opacity-100 opacity-60'} dangerouslySetInnerHTML={{__html:text}}>
 
                         </div>
                 </div>
                 <Link href={`/product/${id}`}
-                      className={'font-normal sm:text-primary text-white text-base flex items-center space-x-3 font-roboto'}>
+                      className={'font-normal sm:text-primary text-white text-base flex items-center space-x-3 font-GothamPro'}>
                     {t('more')}
                     <FaLongArrowAltRight fontSize={20}/>
                 </Link>

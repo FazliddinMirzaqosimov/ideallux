@@ -6,13 +6,13 @@ const _404 = () => {
     return (
         <div className={'bg-bgColor min-h-[90vh] sm:py-16 py-12 flex items-center justify-center'}>
             <div className={'container mx-auto '}>
-                    <h1 className={'font-bold font-domCasual lg:text-[180px] md:text-[140px] sm:text-[100px] text-[64px] text-primary text-center'}>
+                    <h1 className={'font-bold font-GothamPro lg:text-[180px] md:text-[140px] sm:text-[100px] text-[64px] text-primary text-center'}>
                         404
                     </h1>
-                    <h6 className={'font-bold font-roboto lg:text-4xl md:text-2xl sm:text-xl text-lg  text-black text-center mb-3 font-roboto'}>
+                    <h6 className={'font-bold font-GothamPro lg:text-4xl md:text-2xl sm:text-xl text-lg  text-black text-center mb-3 '}>
                         {t('pageNotFound.title')}
                     </h6>
-                    <p className={'font-normal font-roboto sm:text-lg text-sm text-secondary text-center font-roboto'}>
+                    <p className={'font-normal font-GothamPro sm:text-lg text-sm text-secondary text-center '}>
                         {t('pageNotFound.info')}
                     </p>
 

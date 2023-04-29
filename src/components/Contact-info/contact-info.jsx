@@ -8,9 +8,9 @@ const ContactInfo = ({icon, text, title}) => {
         <div className={'flex sm:flex-row flex-col items-start space-x-1'}>
             <div className={'flex  items-center space-x-3'}>
                 <div className={'text-xl text-primary'}>{icon}</div>
-                <h6 className={'font-bold text-black text-lg flex-shrink-0 font-roboto'}>{t(title)}:</h6>
+                <h6 className={'font-bold text-black text-lg flex-shrink-0 font-GothamPro'}>{t(title)}:</h6>
             </div>
-            <p className={'font-normal text-black text-lg font-roboto'}>{t(text)}</p>
+            <p className={'font-normal text-black text-lg font-GothamPro'}>{t(text)}</p>
         </div>
     );
 };

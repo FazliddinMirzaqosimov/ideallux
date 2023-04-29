@@ -23,7 +23,7 @@ const DesktopNavbar = () => {
                         {
                             navItems.map(item => (
                                 <li key={item.lable}>
-                                    <Link href={item.route} className={'text-sm text-white font-normal font-roboto'}>
+                                    <Link href={item.route} className={'text-sm text-white font-normal font-GothamPro'}>
                                         {t(item.lable)}
                                     </Link>
                                 </li>
@@ -35,11 +35,11 @@ const DesktopNavbar = () => {
                         <a target="_blank" href={'https://www.instagram.com/'}
                            className={'flex items-center space-x-1'}>
                             <RiInstagramLine className={'text-white'}/>
-                            <p className={'text-xs text-white font-roboto'}>Instagram</p>
+                            <p className={'text-xs text-white font-GothamPro'}>Instagram</p>
                         </a>
                         <a href={'tel:+99897 223 00 01'} className={'flex items-center space-x-1'}>
                             <RiPhoneLine className={'text-white'}/>
-                            <p className={'text-xs text-white font-roboto'}>+99897 223 00 01</p>
+                            <p className={'text-xs text-white font-GothamPro'}>+99897 223 00 01</p>
                         </a>
                         <Language color={'white'}/>
                     </div>

@@ -9,7 +9,6 @@ const ProductImageSlider = ({images}) => {
 
             <Swiper
                 id={'mySwiper2'}
-                loop={'true'}
                 pagination={true}
                 modules={[Pagination]}
                 className="  mySwiper2 w-full aspect-[4/4] z-20">

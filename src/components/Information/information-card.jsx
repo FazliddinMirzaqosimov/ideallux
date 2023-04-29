@@ -8,8 +8,8 @@ const InformationCard = ({icon,title,text}) => {
                 {icon}
             </div>
             <div className={'flex flex-col items-start space-y-1'}>
-                <h6 className={'sm:text-white text-black sm:text-lg text-base sm:font-bold font-normal font-roboto'}>{t(title)}</h6>
-                <p className={' font-normal sm:text-white text-secondary sm:text-sm text-xs font-roboto'}>{t(text)}</p>
+                <h6 className={'sm:text-white text-black sm:text-lg text-base sm:font-bold font-normal GothamPro'}>{t(title)}</h6>
+                <p className={' font-normal sm:text-white text-secondary sm:text-sm text-xs font-GothamPro'}>{t(text)}</p>
             </div>
         </div>
     );

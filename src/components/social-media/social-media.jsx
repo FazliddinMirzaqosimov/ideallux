@@ -13,7 +13,7 @@ const SocialMedia = ({isContact}) => {
     const {t}=useTranslation()
     return (
         <div className={'flex flex-col items-start'}>
-            <p className={`text-black ${isContact ? 'sm:text-2xl text-lg font-bold mb-6' : 'text-base font-normal mb-1'}  font-roboto`}>{t('contact.alwaysInTouch')}</p>
+            <p className={`text-black ${isContact ? 'sm:text-2xl text-lg font-bold mb-6' : 'text-base font-normal mb-1'}  font-GothamPro`}>{t('contact.alwaysInTouch')}</p>
             {
                 isContact ?
                     <div className={'flex flex-col items-start space-y-7 mb-6'}>
@@ -25,7 +25,7 @@ const SocialMedia = ({isContact}) => {
 
                     </div>
                     :
-                    <a href={`tel:+99897 223 00 01`} className={'font-bold text-primary text-2xl mb-3 font-roboto'}>+99897 223 00
+                    <a href={`tel:+99897 223 00 01`} className={'font-bold text-primary text-2xl mb-3 font-GothamPro'}>+99897 223 00
                         01</a>
             }
             <div className={'flex items-center space-x-9'}>

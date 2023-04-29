@@ -27,7 +27,7 @@ const Languages = ({color}) => {
                 onChange={(e)=>changeLang(e)}
                 className={` text-${color} bg-transparent cursor-pointer text-xs  hover:border-gray-400 focus:outline-none `}>
                 {options.map((option) => (
-                    <option key={option.value} value={option.value} className={'text-black font-roboto'}>
+                    <option key={option.value} value={option.value} className={'text-black font-GothamPro'}>
 
                         {/*<Image src={option.imageSrc} alt={option.value} width={16} height={16} suppressHydrationWarning={true}/>*/}
                         {option.label}
