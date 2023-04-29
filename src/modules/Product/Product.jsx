@@ -11,9 +11,14 @@ import {searchData} from "@/slice/search";
 
 const Product = () => {
     const {lang} = useSelector(state => state.lang)
+
     const [data, setData] = useState([])
     const [categoryIdState, setCategoryIdState] = useState('')
     const [language, setLanguage] = useState('')
+    const [enabled, setEnabled] = useState(true)
+    const [isSort, setIsSort] = useState(false)
+
+
     const {search} = useSelector(state => state.search)
     const {t} = useTranslation()
     const dispatch = useDispatch()
@@ -21,18 +26,25 @@ const Product = () => {
     const {
         data: productData,
         isLoading: productLoading
-    } = useQuery('get-products-all', () => apiService.getData('/products'))
+    } = useQuery('get-products-all', () => apiService.getData('/products'), {
+        enabled: enabled
+        ,
+        onSuccess: () => {
+            setEnabled(false)
+        }
+    })
     const {data: categorydata} = useQuery('get-category', () => apiService.getData('/categories'))
     const router = useRouter()
     const {categoryId} = router.query
 
+    console.log(data)
 
     useEffect(() => {
         setCategoryIdState(categoryId)
+        console.log('render')
         if (categoryId === 'all' && search === "") {
 
-          const shuffleData=  shuffle(productData?.data?.products)
-            console.log(shuffleData)
+            const shuffleData = shuffle(productData?.data?.products)
             setData(shuffleData)
         } else if (categoryId === 'all' && search !== "") {
             const searchData = productData?.data?.products.filter(product => product.titleRu.toLowerCase().includes(search) || product.titleUz.toLowerCase().includes(search))
@@ -53,9 +65,25 @@ const Product = () => {
         dispatch(searchData(""))
     }
 
+
     const productSort = () => {
-        console.log(productData?.data?.products)
-        setData([])
+        let sortByAlfa = []
+        if (!isSort) {
+            if (lang === 'ru') {
+                sortByAlfa = productData?.data?.products.sort((a, b) => a.titleRu.localeCompare(b.titleRu))
+            } else {
+                sortByAlfa = productData?.data?.products.sort((a, b) => a.titleUz.localeCompare(b.titleUz))
+            }
+            setData(sortByAlfa)
+            setIsSort(true)
+        } else {
+            const shuffleData = shuffle(productData?.data?.products)
+            setData(shuffleData)
+            setIsSort(false)
+
+        }
+
+        console.log(sortByAlfa)
     }
 
     function shuffle(array) {
