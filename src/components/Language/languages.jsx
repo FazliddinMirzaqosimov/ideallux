@@ -30,7 +30,9 @@ const Languages = ({color}) => {
                     <option key={option.value} value={option.value} className={'text-black font-GothamPro'}>
 
                         {/*<Image src={option.imageSrc} alt={option.value} width={16} height={16} suppressHydrationWarning={true}/>*/}
+                        <p className={'font-GothamPro'}>
                         {option.label}
+                        </p>
                     </option>
                 ))}
 

@@ -13,8 +13,8 @@ const CategoryCard = ({image, text, isCard,isActive}) => {
                     <div
                         className={'absolute ml-[120px] mt-24  w-0 h-0 bg-primary rounded-full z-10 group-hover:w-[200%] group-hover:h-[200%] duration-500'}></div>
                     <div
-                        className={`absolute bottom-0 -right-2 2xl:w-[85%] xl:w-[95%] w-[90%] 2xl:aspect-[3/5] lg:aspect-[4/5] aspect-[3/3] z-20`}>
-                        <Image src={image?.location} alt={'category image '} className={'object-contain object-bottom'}
+                        className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 2xl:w-[85%] xl:w-[95%] w-[90%] 2xl:aspect-[3/5] lg:aspect-[4/5] aspect-[3/3] z-20`}>
+                        <Image src={image?.location} alt={'category image '} className={'object-contain object-center'}
                                layout={'fill'}/>
                     </div>
                 </>

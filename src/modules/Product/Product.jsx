@@ -77,7 +77,6 @@ const Product = () => {
             setData(sortByAlfa)
             setIsSort(true)
         } else {
-            console.log(data)
             const shuffleData = shuffle(data)
             setData(shuffleData)
             setIsSort(false)

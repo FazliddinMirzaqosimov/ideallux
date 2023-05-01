@@ -10,7 +10,7 @@ const Footer = () => {
     const {t}=useTranslation()
     return (
         <div className={'bg-white md:mb-0 mb-20'}>
-            <div className={'relative container mx-auto py-12 grid 2xl:grid-cols-6 sm:grid-cols-2  3xl:gap-16 gap-10  items-center'}>
+            <div className={'relative container mx-auto py-12 grid 2xl:grid-cols-6 sm:grid-cols-2  3xl:gap-16 gap-10  items-center overflow-hidden'}>
 
                 <div className={'2xl:col-span-2 flex flex-col space-y-6'}>
                     <Link href={'/'}>
@@ -30,7 +30,7 @@ const Footer = () => {
 
                     ))
                 }
-                <Image src={FooterImage} alt={'footer image'} className={'absolute lg:block hidden bottom-0 right-0'}/>
+                <Image src={FooterImage} alt={'footer image'} className={'absolute lg:block hidden -bottom-20 right-0  w-[287px] aspect-[3/4] '} />
             </div>
         </div>
     );
