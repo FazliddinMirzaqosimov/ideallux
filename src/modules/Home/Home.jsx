@@ -118,9 +118,9 @@ const Home = () => {
                 </div>
             </div>
             {/*Partners*/}
-            <div className={'mb-16'}>
-                <Partners />
-            </div>
+            {/*<div className={'mb-16'}>*/}
+            {/*    <Partners />*/}
+            {/*</div>*/}
             {/* information*/}
             <Information/>
         </div>
