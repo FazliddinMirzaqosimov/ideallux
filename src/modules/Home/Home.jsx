@@ -1,7 +1,9 @@
 import {Swiper, SwiperSlide} from "swiper/react"
 import SwiperCore, {Pagination, Autoplay} from "swiper";
 import Image from "next/image";
-import Banner from '/public/banner-orginal.jpg'
+import Banner1 from '/public/banner1.jpg'
+import Banner2 from '/public/banner2.png'
+import Banner3 from '/public/banner3.png'
 import {
     ArticleCard,
     ArticleHomeCard,
@@ -57,13 +59,13 @@ const Home = () => {
                     modules={[Pagination]}
                     className="  mySwiper w-full aspect-[4/2] ">
                     <SwiperSlide className={'relative w-full h-full'}>
-                        <Image src={Banner} alt={'banner'} layout='fill'/>
+                        <Image src={Banner1} alt={'banner'} layout='fill'/>
                     </SwiperSlide>
                     <SwiperSlide className={'relative w-full h-full'}>
-                        <Image src={Banner} alt={'banner'} layout='fill'/>
+                        <Image src={Banner2} alt={'banner'} layout='fill'/>
                     </SwiperSlide>
                     <SwiperSlide className={'relative w-full h-full'}>
-                        <Image src={Banner} alt={'banner'} layout='fill'/>
+                        <Image src={Banner3} alt={'banner'} layout='fill'/>
                     </SwiperSlide>
                 </Swiper>
             </div>
