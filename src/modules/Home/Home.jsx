@@ -1,9 +1,10 @@
 import {Swiper, SwiperSlide} from "swiper/react"
 import SwiperCore, {Pagination, Autoplay} from "swiper";
 import Image from "next/image";
-import Banner1 from '/public/banner1.jpg'
+import Banner1 from '/public/banner1.JPG'
 import Banner2 from '/public/banner2.png'
 import Banner3 from '/public/banner3.png'
+import Banner4 from '/public/banner4.png'
 import {
     ArticleCard,
     ArticleHomeCard,
@@ -67,6 +68,9 @@ const Home = () => {
                     <SwiperSlide className={'relative w-full h-full'}>
                         <Image src={Banner3} alt={'banner'} layout='fill'/>
                     </SwiperSlide>
+                    <SwiperSlide className={'relative w-full h-full'}>
+                        <Image src={Banner4} alt={'banner'} layout='fill'/>
+                    </SwiperSlide>
                 </Swiper>
             </div>
             {/*article*/}
@@ -104,21 +108,21 @@ const Home = () => {
                 </div>
             </div>
             {/* articles*/}
-            <div className={'container mx-auto  mb-20'}>
-                <TitleSection text={'usefulArticles'}/>
-                <div className={'grid lg:grid-cols-3  gap-3'}>
-                    {
-                        articleLoading ? Array(3).fill('').map((_,ind) => <Skeleton   height={500} key={ind}/>)
-                            :
-                        articleData?.data?.articles.map(article=>(
-                    <ArticleCard created={article?.created} key={article._id} image={article?.mainImage} title={language==='ru' ? article?.titleRu :  article?.titleUz} id={article?._id} />
+            {/*<div className={'container mx-auto  mb-20'}>*/}
+            {/*    <TitleSection text={'usefulArticles'}/>*/}
+            {/*    <div className={'grid lg:grid-cols-3  gap-3'}>*/}
+            {/*        {*/}
+            {/*            articleLoading ? Array(3).fill('').map((_,ind) => <Skeleton   height={500} key={ind}/>)*/}
+            {/*                :*/}
+            {/*            articleData?.data?.articles.map(article=>(*/}
+            {/*        <ArticleCard created={article?.created} key={article._id} image={article?.mainImage} title={language==='ru' ? article?.titleRu :  article?.titleUz} id={article?._id} />*/}
 
-                        ))
-                    }
+            {/*            ))*/}
+            {/*        }*/}
 
 
-                </div>
-            </div>
+            {/*    </div>*/}
+            {/*</div>*/}
             {/*Partners*/}
             {/*<div className={'mb-16'}>*/}
             {/*    <Partners />*/}
