@@ -1,7 +1,7 @@
 import {Swiper, SwiperSlide} from "swiper/react"
 import SwiperCore, {Pagination, Autoplay} from "swiper";
 import Image from "next/image";
-import Banner1 from '/public/banner1.JPG'
+import Banner1 from '/public/banner1.jpg'
 import Banner2 from '/public/banner2.png'
 import Banner3 from '/public/banner3.png'
 import Banner4 from '/public/banner4.png'
