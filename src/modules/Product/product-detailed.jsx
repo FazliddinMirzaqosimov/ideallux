@@ -24,7 +24,6 @@ const ProductDetailed = () => {
         enabled: false
     })
 
-    console.log(productById?.data?.product?.category)
 
     const {t} = useTranslation()
 
@@ -35,14 +34,12 @@ const ProductDetailed = () => {
     useEffect(() => {
         setLanguage(lang)
     }, [lang])
-    console.log(mainImage)
     const checkkImage = (image) => {
         setMainImage(image?.location)
     }
 
     useEffect(() => {
         setMainImage(productById?.data?.product?.images[0].location)
-        console.log(productById?.data?.product)
         if (isSuccess) {
             refetch()
         }

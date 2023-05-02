@@ -37,10 +37,8 @@ const Product = () => {
     const router = useRouter()
     const {categoryId} = router.query
 
-    console.log(data)
 
     useEffect(() => {
-        console.log('render')
         setCategoryIdState(categoryId)
         if (categoryId === 'all' && search === "") {
 

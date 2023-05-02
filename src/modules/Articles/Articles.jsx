@@ -9,7 +9,6 @@ const Articles = () => {
     const {data: articleData, isLoading} = useQuery('get-article', () => apiService.getData('/articles?page=1&limit=3'))
     const {lang}=useSelector(state => state.lang)
     const [language,setLanguage]=useState('')
-    console.log(lang)
     useEffect(()=>{
         setLanguage(lang)
     },[lang])
