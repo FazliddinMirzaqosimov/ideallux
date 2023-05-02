@@ -46,6 +46,7 @@ const ProductDetailed = () => {
     }, [productById])
 
 
+
     const showDescription = () => {
         setShowDesc(!showDesc)
     }
