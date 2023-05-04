@@ -89,8 +89,8 @@ const Home = () => {
                 </div>
             </div>
             {/*    Category*/}
-            <div className={'container mx-auto  mb-16 md:block hidden'}>
-                <TitleSection text={'category'}/>
+            <div className={'container mx-auto  mb-16 '}>
+               <TitleSection text={'category'}/>
                <Catalog isState={false}/>
 
             </div>
@@ -102,7 +102,7 @@ const Home = () => {
                 <Swiper
                     id={'mySwiper1'}
                     autoplay={{
-                        delay: 3000
+                        delay: 4000
                     }}
                     breakpoints={{
                          0: {
