@@ -5,6 +5,10 @@ import Banner1 from '/public/banner1.jpg'
 import Banner2 from '/public/banner2.png'
 import Banner3 from '/public/banner3.png'
 import Banner4 from '/public/banner4.png'
+import Banner1Ru from '/public/banner1-ru.png'
+import Banner2Ru from '/public/banner2-ru.png'
+import Banner3Ru from '/public/banner3-ru.png'
+import Banner4Ru from '/public/banner4-ru.png'
 import {
     ArticleCard,
     ArticleHomeCard,
@@ -60,21 +64,21 @@ const Home = () => {
                     modules={[Pagination]}
                     className="  mySwiper w-full aspect-[4/2] ">
                     <SwiperSlide className={'relative w-full h-full'}>
-                        <Image src={Banner1} alt={'banner'} layout='fill'/>
+                        <Image src={language === 'ru' ? Banner1Ru : Banner1} alt={'banner'} layout='fill'/>
                     </SwiperSlide>
                     <SwiperSlide className={'relative w-full h-full'}>
-                        <Image src={Banner2} alt={'banner'} layout='fill'/>
+                        <Image src={language === 'ru' ? Banner2Ru : Banner2} alt={'banner'} layout='fill'/>
                     </SwiperSlide>
                     <SwiperSlide className={'relative w-full h-full'}>
-                        <Image src={Banner3} alt={'banner'} layout='fill'/>
+                        <Image src={language === 'ru' ? Banner3Ru : Banner3} alt={'banner'} layout='fill'/>
                     </SwiperSlide>
                     <SwiperSlide className={'relative w-full h-full'}>
-                        <Image src={Banner4} alt={'banner'} layout='fill'/>
+                        <Image src={language === 'ru' ? Banner4Ru : Banner4} alt={'banner'} layout='fill'/>
                     </SwiperSlide>
                 </Swiper>
             </div>
             {/*article*/}
-            <div className={'bg-bgCard mb-16'}>
+            <div className={'bg-bgCard mb-16 sm:block hidden'}>
                 <div className={'grid xl:grid-cols-2 gap-3  sm:container sm:mx-auto'}>
                     {
                         productInfoLoading ? Array(2).fill('').map((_,ind)=> <Skeleton  height={400} key={ind}/>)
@@ -96,7 +100,36 @@ const Home = () => {
             {/* product*/}
             <div className={'container mx-auto  mb-16'}>
                 <TitleSection text={'new'}/>
-                <div className={'grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8'}>
+                {/*mobile slider*/}
+                <div className={'sm:hidden block'}>
+                <Swiper
+                    id={'mySwiper1'}
+                    autoplay={{
+                        delay: 3000
+                    }}
+                    breakpoints={{
+                         0: {
+                            slidesPerView: 1.3, spaceBetween: 12
+                        }
+                    }}
+
+
+                    className="  mySwiper-product w-full  ">
+                    {
+                        productLoading ? <Skeleton  height={350} />
+                            :
+                            productData?.data?.products.map(product => (
+                                <SwiperSlide className={''} key={product?._id}>
+                                    <ProductCard  id={product?._id} images={product?.images} title={language==='ru' ? product?.titleRu : product?.titleUz} isNew={true}/>
+                                </SwiperSlide>
+
+                            ))
+                    }
+
+
+                </Swiper>
+                </div>
+                <div className={'hidden sm:grid   xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8'}>
                     {
                         productLoading ? Array(5).fill('').map((_,ind)=> <Skeleton  height={350} key={ind}/>)
                             :
