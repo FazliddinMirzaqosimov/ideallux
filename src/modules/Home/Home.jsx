@@ -10,16 +10,13 @@ import Banner2Ru from '/public/banner2-ru.png'
 import Banner3Ru from '/public/banner3-ru.png'
 import Banner4Ru from '/public/banner4-ru.png'
 import {
-    ArticleCard,
     ArticleHomeCard,
     Catalog,
-    Partners,
     ProductCard,
     SearchInput,
     TitleSection,
     Information
 } from "@/components";
-import ImageArticle from '/public/footer-image.png'
 import apiService from "@/service/api";
 import {useQuery} from "react-query";
 import Skeleton from "react-loading-skeleton";
