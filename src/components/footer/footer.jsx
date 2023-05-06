@@ -1,13 +1,22 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Image from "next/image";
 import Logo from '../../../public/Logo.png'
 import Link from "next/link";
-import {SocialMedia} from "@/components";
+import {Button, SocialMedia} from "@/components";
 import {sidebarNavItems} from "@/config/routeConfigs";
 import FooterImage from '../../../public/footer-image.png'
 import {useTranslation} from "react-i18next";
+import {useSelector} from "react-redux";
+
+
 const Footer = () => {
     const {t}=useTranslation()
+    const {lang}=useSelector(state => state.lang)
+    const [language,setLanguage]=useState('')
+    useEffect(()=>{
+        setLanguage(lang)
+    },[lang])
+
     return (
         <div className={'bg-white md:mb-0 mb-20'}>
             <div className={'relative container mx-auto py-12 grid 2xl:grid-cols-6 sm:grid-cols-2  3xl:gap-16 gap-10  items-center overflow-hidden'}>
@@ -20,6 +29,9 @@ const Footer = () => {
                         {t('aboutCompany')}
                     </p>
                     <SocialMedia isContact={false}/>
+                    <a href={`${language==='ru' ? 'IDEAL каталог 2023 рус.pdf' : 'IDEAL katalog 2023 uzb.pdf'}`} download={`${language==='ru' ? 'IDEAL каталог 2023 рус.pdf' : 'IDEAL katalog 2023 uzb.pdf'}`}>
+                        <Button text={'download'} bg={'primary'} color={'white'}/>
+                    </a>
                 </div>
                 {
                     sidebarNavItems.map(nav=>(

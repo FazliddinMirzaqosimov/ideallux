@@ -42,15 +42,13 @@ const Catalog = ({setIsShow, isState}) => {
                         isLoading ? Array(6).fill('').map((_,ind)=> <Skeleton  height={400} key={ind}/>)
                             :
                             data?.data?.categories.map(category => (
-                                <div key={category?._id} onClick={() => categoryClick(category._id)} className={``}>
-                                    <SwiperSlide className={''} >
-                                        <div key={category?._id} onClick={() => categoryClick(category._id)} className={``}>
+                                    <SwiperSlide  key={category?._id} onClick={() => categoryClick(category._id)} >
+                                        <div onClick={() => categoryClick(category._id)} className={``}>
                                             <CategoryCard isCard={true} image={category?.image} id={category?._id} text={language==='ru' ? category?.nameRu : category?.nameUz}
-                                                          id={category?._id}/>
+                                                         />
                                         </div>
                                     </SwiperSlide>
 
-                                </div>
 
                             ))
                     }
@@ -65,8 +63,7 @@ const Catalog = ({setIsShow, isState}) => {
                     :
                 data?.data?.categories.map(category => (
                     <div key={category?._id} onClick={() => categoryClick(category._id)} className={``}>
-                        <CategoryCard isCard={true} image={category?.image} id={category?._id} text={language==='ru' ? category?.nameRu : category?.nameUz}
-                                      id={category?._id}/>
+                        <CategoryCard isCard={true} image={category?.image} id={category?._id} text={language==='ru' ? category?.nameRu : category?.nameUz}/>
                     </div>
 
                 ))
